@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+
+    <persistence-unit name="defaultPersistenceUnit">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>com.binge.server.model.BrandInfoEntity</class>
+        <class>com.binge.server.model.BrandInfoTypesEntity</class>
+        <class>com.binge.server.model.CitysEntity</class>
+        <class>com.binge.server.model.DynamicImageEntity</class>
+        <class>com.binge.server.model.FamousProjectEntity</class>
+        <class>com.binge.server.model.ProductTypesEntity</class>
+        <class>com.binge.server.model.ProductsEntity</class>
+        <class>com.binge.server.model.ProjectDetailEntity</class>
+        <class>com.binge.server.model.ProjectListEntity</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.1.105:3306/testweb"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="zlb"/>
+            <property name="hibernate.connection.password" value="zlb"/>
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>

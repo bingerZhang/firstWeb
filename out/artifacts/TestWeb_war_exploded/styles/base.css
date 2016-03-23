@@ -1,0 +1,22 @@
+@charset "utf-8";
+/*CSS reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td{margin:0;padding:0;}
+body{color: rgb(119, 119, 119); font-family:Microsoft Yahei, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);font-size:14px;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+ol,ul,li{list-style:none;}
+em,i{font-style:normal}
+q:before,q:after {content:'';}
+abbr,acronym { border:0;}
+a{text-decoration:none;outline:none;}
+a:link {transition:color 0.6s ease-out; color: rgb(102, 102, 102); text-decoration: none; -webkit-transition: color 0.6s ease-out; -moz-transition: color 0.6s ease-out;}
+a:visited {transition:color 0.6s ease-out; color: rgb(102, 102, 102); text-decoration: none; -webkit-transition: color 0.6s ease-out; -moz-transition: color 0.6s ease-out;}
+a:hover {color: rgb(221, 9, 32);}
+a:active{outline:none;blr:expression(this.onFocus=this.blur());}
+.clear{clear:both;font-size:0px;height:0px;*height:auto;overflow:hidden;*overflow:visible;line-height:0px}
+.strong{font-weight:bold;}
+.iframe{margin:0;padding:0;}
+/*CSS reset end*/
+/*if webkit then remove border default style*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+input:focus{outline:none;}
