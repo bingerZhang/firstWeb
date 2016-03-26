@@ -1,6 +1,7 @@
 package com.binge.configuration;
 
-import com.surfront.exception.DataBackendException;
+
+import com.binge.exception.DataBackendException;
 
 public interface ConfigurationManager {
     public <T extends Configuration> T getConfiguration(Class<T> clazz) throws DataBackendException;
