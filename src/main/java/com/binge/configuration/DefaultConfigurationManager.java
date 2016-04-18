@@ -1,6 +1,7 @@
 package com.binge.configuration;
 
 
+import com.binge.configurator.*;
 import com.binge.exception.DataBackendException;
 import com.binge.module.User;
 import com.binge.util.Application;
@@ -28,6 +29,10 @@ public class DefaultConfigurationManager implements ConfigurationManager, Runnab
     private DefaultConfigurationManager() {
         configurators.put(UserConfiguration.class, wrap(new UserConfigurator(getConfFile(UserConfiguration.TYPE))));
         configurators.put(DistributeConfiguration.class, wrap(new DistributeConfigurator(getConfFile(DistributeConfiguration.TYPE))));
+        configurators.put(ProjectConfiguration.class,wrap(new ProjectConfigurator(getConfFile(ProjectConfiguration.TYPE))));
+        configurators.put(HotImageConfiguration.class,wrap(new HotImageConfigurator(getConfFile(HotImageConfiguration.TYPE))));
+        configurators.put(MapConfiguration.class,wrap(new MapConfigurator(getConfFile(MapConfiguration.TYPE))));
+        configurators.put(BrandConfiguration.class,wrap(new BrandConfigurator(getConfFile(MapConfiguration.TYPE))));
     }
 
 

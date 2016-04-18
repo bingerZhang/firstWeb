@@ -1,5 +1,6 @@
-package com.binge.configuration;
+package com.binge.configurator;
 
+import com.binge.configuration.DistributeConfiguration;
 import com.binge.module.DistributeFile;
 import com.binge.module.Distributelist;
 

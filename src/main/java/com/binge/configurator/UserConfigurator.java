@@ -1,6 +1,7 @@
-package com.binge.configuration;
+package com.binge.configurator;
 
 
+import com.binge.configuration.UserConfiguration;
 import com.binge.exception.DataBackendException;
 import com.binge.module.User;
 

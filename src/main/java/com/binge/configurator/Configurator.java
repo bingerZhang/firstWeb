@@ -1,5 +1,6 @@
-package com.binge.configuration;
+package com.binge.configurator;
 
+import com.binge.configuration.Configuration;
 import com.binge.exception.DataBackendException;
 
 public interface Configurator<T extends Configuration> {

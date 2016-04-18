@@ -1,5 +1,7 @@
-package com.binge.configuration;
+package com.binge.configurator;
 
+import com.binge.configuration.Configuration;
+import com.binge.configurator.FileConfigurator;
 import com.binge.util.JsonReader;
 import com.binge.util.JsonWriter;
 
