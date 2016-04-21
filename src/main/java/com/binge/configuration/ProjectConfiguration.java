@@ -23,6 +23,9 @@ public class ProjectConfiguration implements Configuration {
     }
 
     public List<FamousProject> getFamousProjectList() {
+        if(famousProjectList==null){
+            famousProjectList = new ArrayList<FamousProject>();
+        }
         return famousProjectList;
     }
 

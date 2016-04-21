@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by zlb on 2016/4/18.
  */
-public class FamousProject implements Serializable,BeanWrapper {
+public class FamousProject implements BeanWrapper {
     private int id;
     private String name;
     private String iconPath;

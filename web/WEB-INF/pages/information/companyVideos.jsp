@@ -37,15 +37,15 @@ To change this template use File | Settings | File Templates.
 </head>
 <body>
 <!-- header begin -->
-<div class="header_div"><iframe scrolling="no" src="/header.htm" id="" allowtransparency="true" framespacing="0" border="0" frameborder="0" style="width:100%;height:85px;"></iframe></div>
+<div class="header_div"><iframe scrolling="no" src="/header.htm" id="header" allowtransparency="true" framespacing="0" border="0" frameborder="0" style="width:100%;height:85px;"></iframe></div>
 <!-- header end -->
 <!-- 正文 开始 -->
 <div class="ad" style="background-image:url('/images/2.jpg')">
 	<div class="ban_top"></div>
 	<div class="area_sec_dhs">
-		<a href="1.htm">企业动态</a>
-		<a class="loc" href="2.htm">行业新闻</a>
-		<a class="loc" href="3.htm">企业视频</a>
+		<a href="companyNews.htm">企业动态</a>
+		<a class="loc" href="industryNews.htm">行业新闻</a>
+		<a class="loc" href="companyVideos.htm">企业视频</a>
 	</div>
 </div>
 <div class="area_1200">
@@ -95,12 +95,12 @@ To change this template use File | Settings | File Templates.
 		</li>
 	</div>
 	<!-- 分页 -->
-	<div><iframe scrolling="no" src="../scott.htm" id="" allowtransparency="true" framespacing="0" border="0" frameborder="0" style="width:100%;height:70px;"></iframe></div>
+	<div><iframe scrolling="no" src="../scott.htm" id="scott" allowtransparency="true" framespacing="0" border="0" frameborder="0" style="width:100%;height:70px;"></iframe></div>
 	<div class="sp_60"></div>
 </div>
 <!-- 正文 end -->
 <!--foot begin-->
-<div class="foot"><iframe scrolling="no" src="/foot.htm" id="" allowtransparency="true" framespacing="0" border="0" frameborder="0" style="width:100%;height:60px;"></iframe></div>
+<div class="foot"><iframe scrolling="no" src="/foot.htm" id="foot" allowtransparency="true" framespacing="0" border="0" frameborder="0" style="width:100%;height:60px;"></iframe></div>
 <!--foot end-->
 <script type="text/javascript">
 	$(document).ready(function(){

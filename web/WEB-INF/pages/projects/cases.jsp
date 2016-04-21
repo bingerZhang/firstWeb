@@ -5,7 +5,11 @@ Date: 16-3-7
 Time: 下午5:15
 To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <!DOCTYPE HTML>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -25,8 +29,8 @@ To change this template use File | Settings | File Templates.
 <div class="ad" style="background-image:url('/images/2.jpg')">
 	<div class="ban_top"></div>
 	<div class="area_sec_dhs">
-		<a class="loc" href="1.htm">经典工程</a>
-		<a href="2.htm">工程名录</a>
+		<a class="loc" href="cases.htm">经典工程</a>
+		<a href="lists.htm">工程名录</a>
 	</div>
 </div>
 <div class="area_1200">
@@ -40,6 +44,22 @@ To change this template use File | Settings | File Templates.
 		</div>
 	</div>
 	<div class="case_css">
+		<c:forEach var="famousp" items="${famousprojects}" varStatus="status">
+            <tr>
+                <%--<td title="${famousp.name}"><c:out value="${famousp.name}"/></td>--%>
+                <%--<td>--%>
+                    <li>
+                    <a style='background: url("${famousp.imagePath}") no-repeat 50%;' href="1-1.htm">
+                        <span>"${famousp.name}"</span>
+                        <div class="case_mask"></div>
+                        <div class="case_ic_zoom"></div>
+                    </a>
+                    </li>
+
+                <%--</td>--%>
+            </tr>
+
+        </c:forEach>
 		<li>
 			<a style='background: url("/images/1.jpg") no-repeat 50%;' href="1-1.htm">
 				<span>NOVATEK天然气公司总部办公大楼</span>
@@ -68,6 +88,8 @@ To change this template use File | Settings | File Templates.
 				<div class="case_ic_zoom"></div>
 			</a>
 		</li>
+
+
 	</div>
 	<!-- 分页 -->
 	<div><iframe scrolling="no" src="/scott.htm" allowtransparency="true" framespacing="0" border="0" frameborder="0" style="width:100%;height:70px;"></iframe></div>

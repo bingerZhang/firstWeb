@@ -3,6 +3,7 @@ package com.binge.configuration;
 
 import com.binge.configurator.*;
 import com.binge.exception.DataBackendException;
+import com.binge.module.FamousProject;
 import com.binge.module.User;
 import com.binge.util.Application;
 
@@ -96,17 +97,51 @@ public class DefaultConfigurationManager implements ConfigurationManager, Runnab
         return new File(Application.CONF_PATH, type + ".properties");
     }
 
+    public static FamousProject getNewFamousProject(int id, String name,String desc,String imagepath,String iconpath){
+        FamousProject famousProject = new FamousProject();
+        famousProject.setId(id);
+        famousProject.setName(name);
+        famousProject.setDescription(desc);
+        famousProject.setImagePath(imagepath);
+        famousProject.setIconPath(iconpath);
+        return famousProject;
+
+    }
 
     public static void main(String[] args) throws Exception {
         UserConfiguration userConfiguration = new UserConfiguration();
 
         userConfiguration.setSequence(2);
-        userConfiguration.getUsers().add(new User(1, "administrator", "admin"));
+        userConfiguration.getUsers().add(new User(1, "administrator", "testadmin"));
+
+        FamousProject famousProject = getNewFamousProject(2,"test_2","test_2_desc","/images/1.jpg","");
+        FamousProject famousProject3 = getNewFamousProject(3,"test_3","test_3_desc","/images/2.jpg","");
+        FamousProject famousProject4 = getNewFamousProject(4,"test_4","test_4_desc","/images/1.jpg","");
+        FamousProject famousProject5 = getNewFamousProject(5,"test_5","test_5_desc","/images/1.jpg","");
+        FamousProject famousProject6 = getNewFamousProject(6,"test_6","test_6_desc","/images/1.jpg","");
+//        famousProject.setDescription("test_desc");
+//        famousProject.setImagePath("/images/1.jpg");
+//        famousProject.setIconPath("");
+//        famousProject.setId(1);
+//        famousProject.setName("NOVATEK天然气公司楼楼楼楼楼");
+
+
+        ProjectConfiguration projectConfiguration = new ProjectConfiguration();
+        List<FamousProject> famousProjectList = projectConfiguration.getFamousProjectList();
+        famousProjectList.add(famousProject);
+        famousProjectList.add(famousProject3);
+        famousProjectList.add(famousProject4);
+        famousProjectList.add(famousProject5);
+        famousProjectList.add(famousProject6);
+
+        projectConfiguration.setFamousProjectList(famousProjectList);
 
         DefaultConfigurationManager manager = new DefaultConfigurationManager();
         manager.setConfiguration(userConfiguration);
+        manager.setConfiguration(projectConfiguration);
 
 //        UserConfiguration configuration = manager.getConfiguration(UserConfiguration.class);
 //        System.out.println(configuration);
     }
+
 }

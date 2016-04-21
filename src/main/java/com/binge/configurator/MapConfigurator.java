@@ -20,13 +20,13 @@ public class MapConfigurator extends JsonConfigurator<MapConfiguration> {
     protected MapConfiguration getConfiguration(Map<String, Object> properties) throws IOException {
         MapConfiguration mapConfiguration = new MapConfiguration();
         if(properties!=null){
-            mapConfiguration.setCityMap((Map<String, Object>) properties.get("city"));
-            mapConfiguration.setCityMap((Map<String, Object>) properties.get("brandtype"));
-            mapConfiguration.setCityMap((Map<String, Object>) properties.get("type"));
+            mapConfiguration.setCityMap((Map<String, String>) properties.get("city"));
+            mapConfiguration.setCityMap((Map<String, String>) properties.get("brandtype"));
+            mapConfiguration.setCityMap((Map<String, String>) properties.get("type"));
         }else{
-            mapConfiguration.setCityMap(new HashMap<String, Object>());
-            mapConfiguration.setBrandtypeMap(new HashMap<String, Object>());
-            mapConfiguration.setTypeMap(new HashMap<String, Object>());
+            mapConfiguration.setCityMap(new HashMap<String, String>());
+            mapConfiguration.setBrandtypeMap(new HashMap<String, String>());
+            mapConfiguration.setTypeMap(new HashMap<String, String>());
         }
 
         return mapConfiguration;

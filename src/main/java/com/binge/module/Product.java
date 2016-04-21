@@ -3,6 +3,9 @@ package com.binge.module;
 import com.binge.util.BeanWrapper;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by zlb on 2016/4/18.
@@ -10,7 +13,10 @@ import java.io.Serializable;
 public class Product implements Serializable,BeanWrapper {
     private int id;
     private String name;
-    private String path;
+    private int type;  //city / park / water /architecture / Tombstone / technology
+    private String description;
+    private List<String> imagepath;
+    private Date createtime;
 
     public int getId() {
         return id;
@@ -28,11 +34,36 @@ public class Product implements Serializable,BeanWrapper {
         this.name = name;
     }
 
-    public String getPath() {
-        return path;
+    public int getType() {
+        return type;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<String> getImagepath() {
+        if(imagepath==null)imagepath = new ArrayList<String>();
+        return imagepath;
+    }
+
+    public void setImagepath(List<String> imagepath) {
+        this.imagepath = imagepath;
+    }
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
     }
 }

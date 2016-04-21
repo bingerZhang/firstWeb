@@ -26,8 +26,8 @@ To change this template use File | Settings | File Templates.
 <div class="ad" style="background-image:url('/images/2.jpg')">
 	<div class="ban_top"></div>
 	<div class="area_sec_dhs">
-		<a class="loc" href="1.htm">企业简介</a>
-		<a href="2.htm">企业文化</a>
+		<a class="loc" href="introduction.htm">企业简介</a>
+		<a href="culture.htm">企业文化</a>
 	</div>
 </div>
 <div class="area_1200">
