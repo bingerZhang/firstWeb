@@ -25,10 +25,14 @@ public class BrandConfigurator extends JsonConfigurator<BrandConfiguration> {
     protected BrandConfiguration getConfiguration(Map<String, Object> properties) throws IOException {
         BrandConfiguration brandConfiguration = new BrandConfiguration();
         if(properties!=null){
-            brandConfiguration.setBrandList(ObjectMapper.getList(properties, "brands", new BrandObjectMapper()));
+            brandConfiguration.setProductionEquipmentList(ObjectMapper.getList(properties, "productionequipments", new BrandObjectMapper()));
+            brandConfiguration.setMineralInformationList(ObjectMapper.getList(properties, "mineralInfos", new BrandObjectMapper()));
+            brandConfiguration.setFactoryPicList(ObjectMapper.getList(properties, "factorypics", new BrandObjectMapper()));
 
         } else {
-            brandConfiguration.setBrandList(new ArrayList<Brand>());
+            brandConfiguration.setProductionEquipmentList(new ArrayList<Brand>());
+            brandConfiguration.setMineralInformationList(new ArrayList<Brand>());
+            brandConfiguration.setFactoryPicList(new ArrayList<Brand>());
 
         }
 
@@ -39,7 +43,9 @@ public class BrandConfigurator extends JsonConfigurator<BrandConfiguration> {
     @Override
     protected Map<String, Object> getProperties(BrandConfiguration configuration) throws IOException {
         Map<String, Object> properties = new LinkedHashMap<String, Object>();
-        properties.put("brands", ObjectMapper.serialize(configuration.getBrandList(), new BrandObjectMapper()));
+        properties.put("factorypics", ObjectMapper.serialize(configuration.getFactoryPicList(), new BrandObjectMapper()));
+        properties.put("mineralInfos", ObjectMapper.serialize(configuration.getMineralInformationList(), new BrandObjectMapper()));
+        properties.put("productionequipments", ObjectMapper.serialize(configuration.getProductionEquipmentList(), new BrandObjectMapper()));
 
         return properties;
     }

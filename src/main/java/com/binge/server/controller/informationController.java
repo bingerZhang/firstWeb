@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping( "/information" )
-public class informationController {
+public class InformationController {
     @RequestMapping( "/companyNews" )
     public String companyNews() {
 

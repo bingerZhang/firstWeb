@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping( "/products" )
-public class productsController {
+public class ProductsController {
     @RequestMapping( "/1" )
     public String index() {
 

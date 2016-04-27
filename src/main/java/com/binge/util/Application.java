@@ -27,9 +27,9 @@ public class Application {
     static {
         String os = System.getProperty("os.name").toLowerCase();
         if (os.contains("windows")) {
-            ROOT_PATH = System.getProperty("application.home", "d:/opt/sroute");
+            ROOT_PATH = System.getProperty("application.home", "d:/opt/testweb");
         } else {
-            ROOT_PATH = System.getProperty("application.home", "/opt/sroute");
+            ROOT_PATH = System.getProperty("application.home", "/opt/testweb");
         }
         CONF_PATH = ROOT_PATH + "/conf";
         KS_PATH = ROOT_PATH + "/keystore";

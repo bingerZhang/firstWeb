@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping( "/equipment" )
-public class equipmentController {
+public class EquipmentController {
     @RequestMapping( "/1" )
     public String equipment() {
 

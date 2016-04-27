@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 
 @Controller
-public class myController {
+public class MyController {
     @RequestMapping( "/" )
     public String welcome() {
 

@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 
 @Controller
-public class welcomeController {
+public class WelcomeController {
     @RequestMapping( "/indexa" )
     public ModelAndView index() {
         ModelAndView modelAndView = new ModelAndView();

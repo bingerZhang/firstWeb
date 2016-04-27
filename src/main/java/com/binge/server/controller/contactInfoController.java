@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping( "/contactinfo" )
-public class contactInfoController {
+public class ContactInfoController {
     @RequestMapping( "/1" )
     public String contactInfo() {
 

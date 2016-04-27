@@ -8,10 +8,7 @@ import com.binge.module.Project;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by zlb on 2016/4/18.
@@ -51,7 +48,7 @@ public class ProductConfigurator extends JsonConfigurator<ProductConfiguration> 
             properteis.put("name", value.getName());
             properteis.put("type",value.getType());
             properteis.put("description",value.getDescription());
-//            properteis.put("description",value.getDescription());
+            properteis.put("imagepaths",value.getImagepath());
             properteis.put("createtime",value.getCreatetime());
             return properteis;
         }
@@ -61,8 +58,11 @@ public class ProductConfigurator extends JsonConfigurator<ProductConfiguration> 
             Product product = new Product();
             product.setId(getInt(map, "id", 0));
             product.setName(getString(map, "name"));
-            product.setCity(getInt(map,"city"));
-            return project;
+            product.setType(getInt(map, "type"));
+            product.setDescription(getString(map, "description"));
+            product.setImagepath(Arrays.asList(getArray(map, "imagepaths",new String[0])));
+            product.setCreatetime(getDate(map, "createtime"));
+            return product;
         }
     }
 }
