@@ -1,5 +1,7 @@
 package com.binge.server.controller;
 
+import com.binge.configuration.BrandConfiguration;
+import com.binge.configuration.HotImageConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -14,10 +16,26 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping( "/equipment" )
-public class EquipmentController {
-    @RequestMapping( "/1" )
-    public String equipment() {
-
-        return "/equipment/1";
+public class EquipmentController extends DefaultController {
+    @RequestMapping( "/EquipmentList" )
+    public String equipments() {
+        BrandConfiguration configuration = getConfiguration(BrandConfiguration.class);
+        request.setAttribute("type",1);
+        request.setAttribute("equipments", configuration.getProductionEquipmentList());
+        return "/equipment/equipment";
+    }
+    @RequestMapping( "/mineralInformationList" )
+    public String mineralInformations() {
+        BrandConfiguration configuration = getConfiguration(BrandConfiguration.class);
+        request.setAttribute("type",2);
+        request.setAttribute("equipments", configuration.getMineralInformationList());
+        return "/equipment/equipment";
+    }
+    @RequestMapping( "/factoryPicList" )
+    public String factoryPics() {
+        BrandConfiguration configuration = getConfiguration(BrandConfiguration.class);
+        request.setAttribute("type",3);
+        request.setAttribute("equipments", configuration.getFactoryPicList());
+        return "/equipment/equipment";
     }
 }

@@ -23,14 +23,15 @@ public class ProjectsController extends DefaultController{
     @RequestMapping( "/cases" )
     public String cases() {
         ProjectConfiguration configuration = getConfiguration();
+        request.setAttribute("type",1);
         request.setAttribute("famousprojects", configuration.getFamousProjectList());
         return "/projects/cases";
     }
     @RequestMapping( "/lists" )
     public String lists() {
         ProjectConfiguration configuration = getConfiguration();
+        request.setAttribute("type",2);
         request.setAttribute("projects", configuration.getProjectList());
-
 
         return "/projects/lists";
     }

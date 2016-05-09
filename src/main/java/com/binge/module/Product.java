@@ -18,6 +18,18 @@ public class Product implements Serializable,BeanWrapper {
     private List<String> imagepath;
     private Date createtime;
 
+    public Product() {
+    }
+
+    public Product(int id, String name, int type, String description, List<String> imagepath, Date createtime) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.imagepath = imagepath;
+        this.createtime = createtime;
+    }
+
     public int getId() {
         return id;
     }

@@ -1,4 +1,6 @@
-﻿<%--
+﻿<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
 Created by IntelliJ IDEA.
 User: zlb
 Date: 16-3-7
@@ -26,12 +28,13 @@ To change this template use File | Settings | File Templates.
 <div class="ad" style="background-image:url('/images/2.jpg')">
 	<div class="ban_top"></div>
 	<div class="area_sec_dhs">
-		<a class="loc" href="1.htm">市政工程系列</a>
-		<a href="1.htm">园林工程系列</a>
-		<a href="1.htm">水利工程系列</a>
-		<a href="1.htm">建筑工程系列</a>
-		<a href="1.htm">碑牌系列</a>
-		<a href="1.htm">工艺系列</a>
+		<%--class="loc" --%>
+		<a <c:if test="${type eq 1}">class="loc"</c:if>href="city.htm">市政工程系列</a>
+		<a <c:if test="${type eq 2}">class="loc"</c:if>href="garden.htm">园林工程系列</a>
+		<a <c:if test="${type eq 3}">class="loc"</c:if>href="water.htm">水利工程系列</a>
+		<a <c:if test="${type eq 4}">class="loc"</c:if>href="architecture.htm">建筑工程系列</a>
+		<a <c:if test="${type eq 5}">class="loc"</c:if>href="monument.htm">碑牌系列</a>
+		<a <c:if test="${type eq 6}">class="loc"</c:if>href="technology.htm">工艺系列</a>
 	</div>
 </div>
 <div class="area_1200">
@@ -61,30 +64,16 @@ To change this template use File | Settings | File Templates.
 		</div>
 	</div>
 	<div class="products_css">
-		<li><a href="1-1.htm"><i style='background: url("/images/1.jpg") no-repeat 50%;'></i><span>圣雅米黄</span>
-			<div class="p_mask"></div>
-			<div class="p_ic_zoom"></div></a></li>
-		<li class="sp"><a href="1-1.htm"><i style='background: url("/images/2.jpg") no-repeat 50%;'></i><span>圣雅米黄</span>
-			<div class="p_mask"></div>
-			<div class="p_ic_zoom"></div></a></li>
-		<li class="sp"><a href="1-1.htm"><i style='background: url("/images/3.jpg") no-repeat 50%;'></i><span>圣雅米黄</span>
-			<div class="p_mask"></div>
-			<div class="p_ic_zoom"></div></a></li>
-		<li class="sp"><a href="1-1.htm"><i style='background: url("/images/1.jpg") no-repeat 50%;'></i><span>圣雅米黄</span>
-			<div class="p_mask"></div>
-			<div class="p_ic_zoom"></div></a></li>
-		<li><a href="1-1.htm"><i style='background: url("/images/2.jpg") no-repeat 50%;'></i><span>圣雅米黄</span>
-			<div class="p_mask"></div>
-			<div class="p_ic_zoom"></div></a></li>
-		<li class="sp"><a href="1-1.htm"><i style='background: url("/images/3.jpg") no-repeat 50%;'></i><span>圣雅米黄</span>
-			<div class="p_mask"></div>
-			<div class="p_ic_zoom"></div></a></li>
-		<li class="sp"><a href="1-1.htm"><i style='background: url("/images/1.jpg") no-repeat 50%;'></i><span>圣雅米黄</span>
-			<div class="p_mask"></div>
-			<div class="p_ic_zoom"></div></a></li>
-		<li class="sp"><a href="1-1.htm"><i style='background: url("/images/2.jpg") no-repeat 50%;'></i><span>圣雅米黄</span>
-			<div class="p_mask"></div>
-			<div class="p_ic_zoom"></div></a></li>
+
+		<c:forEach var="product" items="${productlists}"  varStatus="status">
+			<li><a href="detail.htm"><i style='background: url("${product.imagepath[0]}") no-repeat 50%;'></i><span><c:out value="${product.name}">${product.name}</c:out></span>
+				<div class="p_mask"></div>
+				<div class="p_ic_zoom"></div></a></li>
+		</c:forEach>
+
+		<%--<li class="sp"><a href="1-1.htm"><i style='background: url("/images/2.jpg") no-repeat 50%;'></i><span>圣雅米黄</span>--%>
+			<%--<div class="p_mask"></div>--%>
+			<%--<div class="p_ic_zoom"></div></a></li>--%>
 	</div>
 	<!-- 分页 -->
 	<div><iframe scrolling="no" src="/scott.htm"  allowtransparency="true" framespacing="0" border="0" frameborder="0" style="width:100%;height:70px;"></iframe></div>

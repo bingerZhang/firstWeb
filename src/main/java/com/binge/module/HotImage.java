@@ -12,8 +12,27 @@ public class HotImage implements Serializable,BeanWrapper {
     private int id;
     private String name;
     private String path;
+    private String url;
     private boolean active;
 
+    public HotImage() {
+    }
+
+    public HotImage(int id, String name, String path, String url, boolean active) {
+        this.id = id;
+        this.name = name;
+        this.path = path;
+        this.url = url;
+        this.active = active;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public String getActive() {
         if (isActive())

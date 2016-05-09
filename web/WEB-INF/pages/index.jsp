@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: zlb
@@ -52,22 +53,22 @@
                     </ul>
                 </li>
                 <li class="nli">
-                    <h3><a href="/products/1.htm" target="_top">产品中心</a></h3>
+                    <h3><a href="/products/city.htm" target="_top">产品中心</a></h3>
                     <ul class="sub">
-                        <li><a href="/products/1.htm" target="_top">市政工程系列</a></li>
-                        <li><a href="/products/1.htm" target="_top">园林工程系列</a></li>
-                        <li><a href="/products/1.htm" target="_top">水利工程系列</a></li>
-                        <li><a href="/products/1.htm" target="_top">建筑工程系列</a></li>
-                        <li><a href="/products/1.htm" target="_top">碑牌系列</a></li>
-                        <li><a href="/products/1.htm" target="_top">工艺系列</a></li>
+                        <li><a href="/products/city.htm" target="_top">市政工程系列</a></li>
+                        <li><a href="/products/garden.htm" target="_top">园林工程系列</a></li>
+                        <li><a href="/products/water.htm" target="_top">水利工程系列</a></li>
+                        <li><a href="/products/architecture.htm" target="_top">建筑工程系列</a></li>
+                        <li><a href="/products/monument.htm" target="_top">碑牌系列</a></li>
+                        <li><a href="/products/technology.htm" target="_top">工艺系列</a></li>
                     </ul>
                 </li>
                 <li class="nli">
-                    <h3><a href="/equipment/1.htm" target="_top">品牌实力</a></h3>
+                    <h3><a href="/equipment/EquipmentList.htm" target="_top">品牌实力</a></h3>
                     <ul class="sub">
-                        <li><a href="/equipment/1.htm" target="_top">生产设备</a></li>
-                        <li><a href="/equipment/1.htm" target="_top">矿产资料</a></li>
-                        <li><a href="/equipment/1.htm" target="_top">工厂实景</a></li>
+                        <li><a href="/equipment/EquipmentList.htm" target="_top">生产设备</a></li>
+                        <li><a href="/equipment/mineralInformationList.htm" target="_top">矿产资料</a></li>
+                        <li><a href="/equipment/factoryPicList.htm" target="_top">工厂实景</a></li>
                     </ul>
                 </li>
                 <li class="nli">
@@ -81,12 +82,10 @@
 <!-- ad begin -->
 <div id="hotpic">
     <div id="NewsPic">
-        <a  href="/index.htm" target="_blank" class="pic_a"><img src="/images/1.jpg" class="picture" alt="宣传图片"/></a>
-        <a  href="/index.htm" target="_blank" class="pic_a"><img src="/images/2.jpg" class="picture" alt="宣传图片"/></a>
-        <a  href="/index.htm" target="_blank" class="pic_a"><img src="/images/3.jpg" class="picture" alt="宣传图片"/></a>
-        <a  href="/index.htm" target="_blank" class="pic_a"><img src="/images/1.jpg" class="picture" alt="宣传图片"/></a>
-        <a  href="/index.htm" target="_blank" class="pic_a"><img src="/images/2.jpg" class="picture" alt="宣传图片"/></a>
-        <a  href="/index.htm" target="_blank" class="pic_a"><img src="/images/3.jpg" class="picture" alt="宣传图片"/></a>
+        <c:forEach var="hotimage" items="${hotimages}" varStatus="status">
+            <a  href="${hotimage.url}" target="_blank" class="pic_a"><img src="${hotimage.path}" class="picture" alt="宣传图片"/></a>
+        </c:forEach>
+
         <div class="Nav">
             <span class="Normal">6</span>
             <span class="Normal">5</span>

@@ -13,6 +13,16 @@ public class Brand implements Serializable,BeanWrapper {
     private String description;
     private String imagePath;
 
+    public Brand() {
+    }
+
+    public Brand(int id, int brandType, String description, String imagePath) {
+        this.id = id;
+        this.brandType = brandType;
+        this.description = description;
+        this.imagePath = imagePath;
+    }
+
     public int getId() {
         return id;
     }

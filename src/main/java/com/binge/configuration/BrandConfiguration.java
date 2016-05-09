@@ -16,6 +16,12 @@ public class BrandConfiguration implements Configuration {
     private List<Brand> mineralInformationList;
     private List<Brand> factoryPicList;
 
+    public BrandConfiguration() {
+        this.productionEquipmentList = new ArrayList<Brand>();
+        this.mineralInformationList = new ArrayList<Brand>();
+        this.factoryPicList = new ArrayList<Brand>();
+    }
+
     public List<Brand> getProductionEquipmentList() {
         if(productionEquipmentList==null){
             productionEquipmentList = new ArrayList<Brand>();

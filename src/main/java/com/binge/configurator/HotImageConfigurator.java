@@ -47,6 +47,7 @@ public class HotImageConfigurator extends JsonConfigurator<HotImageConfiguration
             properteis.put("name", value.getName());
             properteis.put("path", value.getPath());
             properteis.put("active", value.getActive());
+            properteis.put("url",value.getUrl());
             return properteis;
         }
 
@@ -57,6 +58,7 @@ public class HotImageConfigurator extends JsonConfigurator<HotImageConfiguration
             hotImage.setName(getString(map, "name"));
             hotImage.setPath(getString(map, "path"));
             hotImage.setActive(getString(map, "active", "true"));
+            hotImage.setUrl(getString(map,"url"));
 
             return hotImage;
         }

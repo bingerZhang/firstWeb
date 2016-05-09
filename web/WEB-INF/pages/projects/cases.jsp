@@ -60,34 +60,13 @@ To change this template use File | Settings | File Templates.
             </tr>
 
         </c:forEach>
-		<li>
-			<a style='background: url("/images/1.jpg") no-repeat 50%;' href="1-1.htm">
-				<span>NOVATEK天然气公司总部办公大楼</span>
-				<div class="case_mask"></div>
-				<div class="case_ic_zoom"></div>
-			</a>
-		</li>
-		<li class="sp">
-			<a style='background: url("/images/3.jpg") no-repeat 50%;' href="1-1.htm">
-				<span>NOVATEK天然气公司总部办公大楼</span>
-				<div class="case_mask"></div>
-				<div class="case_ic_zoom"></div>
-			</a>
-		</li>
-		<li class="sp">
-			<a style='background: url("/images/1.jpg") no-repeat 50%;' href="1-1.htm">
-				<span>NOVATEK天然气公司总部办公大楼</span>
-				<div class="case_mask"></div>
-				<div class="case_ic_zoom"></div>
-			</a>
-		</li>
-		<li class="sp">
-			<a style='background: url("/images/2.jpg") no-repeat 50%;' href="1-1.htm">
-				<span>NOVATEK天然气公司总部办公大楼</span>
-				<div class="case_mask"></div>
-				<div class="case_ic_zoom"></div>
-			</a>
-		</li>
+		<%--<li>--%>
+			<%--<a style='background: url("/images/1.jpg") no-repeat 50%;' href="1-1.htm">--%>
+				<%--<span>NOVATEK天然气公司总部办公大楼</span>--%>
+				<%--<div class="case_mask"></div>--%>
+				<%--<div class="case_ic_zoom"></div>--%>
+			<%--</a>--%>
+		<%--</li>--%>
 
 
 	</div>

@@ -1,4 +1,5 @@
-﻿<%--
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
 Created by IntelliJ IDEA.
 User: zlb
 Date: 16-3-7
@@ -28,9 +29,9 @@ To change this template use File | Settings | File Templates.
 <div class="ad" style="background-image:url('/images/2.jpg')">
 	<div class="ban_top"></div>
 	<div class="area_sec_dhs">
-		<a class="loc" href="1.htm">生产设备</a>
-		<a href="1.htm">矿产资料</a>
-		<a href="1.htm">工厂实景</a>
+        <a <c:if test="${type eq 1}">class="loc"</c:if>href="EquipmentList.htm">生产设备</a>
+        <a <c:if test="${type eq 2}">class="loc"</c:if>href="mineralInformationList.htm">矿产资料</a>
+        <a <c:if test="${type eq 3}">class="loc"</c:if>href="factoryPicList.htm">工厂实景</a>
 	</div>
 </div>
 <div class="area_1200">
@@ -38,30 +39,15 @@ To change this template use File | Settings | File Templates.
 		<div class="read_loc"><img width="12" height="11" src="/images/ic_home.png">&nbsp;&nbsp;<a href="../index.htm">首页</a>  /  品牌实力  / 生产设备</div>
 	</div>
 	<div class="equ_css">
-		<li><a title="意大利薄板生产线" class="example7" href="/images/1.jpg"><i style='background: url("/images/1.jpg") no-repeat 50%;'></i><span>意大利薄板生产线</span>
-			<div class="e_mask"></div>
-			<div class="e_ic_zoom"></div></a></li>
-		<li class="sp"><a title="意大利自动抛光机" class="example7" href="/images/a2.jpg"><i style='background: url("/images/a2.jpg") no-repeat 50%;'></i><span>意大利自动抛光机</span>
-			<div class="e_mask"></div>
-			<div class="e_ic_zoom"></div></a></li>
-		<li class="sp"><a title="意大利自动抛光机" class="example7" href="/images/3.jpg"><i style='background: url("/images/3.jpg") no-repeat 50%;'></i><span>意大利自动抛光机</span>
-			<div class="e_mask"></div>
-			<div class="e_ic_zoom"></div></a></li>
-		<li class="sp"><a title="意大利自动抛光机" class="example7" href="/images/2.jpg"><i style='background: url("/images/2.jpg") no-repeat 50%;'></i><span>意大利自动抛光机</span>
-			<div class="e_mask"></div>
-			<div class="e_ic_zoom"></div></a></li>
-		<li><a title="意大利自动抛光机" class="example7" href="/images/a1.jpg"><i style='background: url("/images/a1.jpg") no-repeat 50%;'></i><span>意大利自动抛光机</span>
-			<div class="e_mask"></div>
-			<div class="e_ic_zoom"></div></a></li>
-		<li class="sp"><a title="意大利自动抛光机" class="example7" href="/images/2.jpg"><i style='background: url("/images/2.jpg") no-repeat 50%;'></i><span>意大利自动抛光机</span>
-			<div class="e_mask"></div>
-			<div class="e_ic_zoom"></div></a></li>
-		<li class="sp"><a title="意大利自动抛光机" class="example7" href="/images/3.jpg"><i style='background: url("/images/3.jpg") no-repeat 50%;'></i><span>意大利自动抛光机</span>
-			<div class="e_mask"></div>
-			<div class="e_ic_zoom"></div></a></li>
-		<li class="sp"><a title="意大利自动抛光机" class="example7" href="/images/2.jpg"><i style='background: url("/images/2.jpg") no-repeat 50%;'></i><span>意大利自动抛光机</span>
-			<div class="e_mask"></div>
-			<div class="e_ic_zoom"></div></a></li>
+        <c:forEach var="equipment" items="${equipments}"  varStatus="status">
+            <li><a title="${equipment.description}" class="example7" href="${equipment.imagePath}"><i style='background: url("${equipment.imagePath}") no-repeat 50%;'></i><span><c:out value="${equipment.description}"></c:out></span>
+                <div class="e_mask"></div>
+                <div class="e_ic_zoom"></div></a></li>
+        </c:forEach>
+
+		<%--<li class="sp"><a title="意大利自动抛光机" class="example7" href="/images/2.jpg"><i style='background: url("/images/2.jpg") no-repeat 50%;'></i><span>意大利自动抛光机</span>--%>
+			<%--<div class="e_mask"></div>--%>
+			<%--<div class="e_ic_zoom"></div></a></li>--%>
 	</div>
 	<!-- 分页 -->
 	<div><iframe scrolling="no" src="/scott.htm" allowtransparency="true" framespacing="0" border="0" frameborder="0" style="width:100%;height:70px;"></iframe></div>

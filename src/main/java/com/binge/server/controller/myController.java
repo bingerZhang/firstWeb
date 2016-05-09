@@ -1,5 +1,7 @@
 package com.binge.server.controller;
 
+import com.binge.configuration.HotImageConfiguration;
+import com.binge.configuration.ProjectConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,16 +16,19 @@ import org.springframework.web.servlet.ModelAndView;
  */
 
 @Controller
-public class MyController {
+public class MyController extends DefaultController{
+
     @RequestMapping( "/" )
     public String welcome() {
+
 
         return "index";
     }
 
     @RequestMapping( "/index" )
     public String index() {
-
+        HotImageConfiguration configuration = getConfiguration(HotImageConfiguration.class);
+        request.setAttribute("hotimages", configuration.getHotImageList());
         return "index";
     }
     @RequestMapping( "/foot" )
