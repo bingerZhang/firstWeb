@@ -39,6 +39,14 @@ public class ProjectConfiguration implements Configuration {
         famousProjectList.add(FamousProject);
     }
 
+    public FamousProject getFamousProjectById(int id){
+        for(FamousProject famousProject:famousProjectList){
+            if(famousProject.getId()==id)
+                return famousProject;
+        }
+        return null;
+    }
+
     public void addProject(Project project){
         if(projectList==null)
             projectList = new ArrayList<Project>();

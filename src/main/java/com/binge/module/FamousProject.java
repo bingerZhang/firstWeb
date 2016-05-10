@@ -3,6 +3,7 @@ package com.binge.module;
 import com.binge.util.BeanWrapper;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by zlb on 2016/4/18.
@@ -11,8 +12,16 @@ public class FamousProject implements BeanWrapper {
     private int id;
     private String name;
     private String iconPath;
-    private String imagePath;
+    private List<String> imagePath;
     private String description;
+
+    public List<String> getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(List<String> imagePath) {
+        this.imagePath = imagePath;
+    }
 
     public int getId() {
         return id;
@@ -36,14 +45,6 @@ public class FamousProject implements BeanWrapper {
 
     public void setIconPath(String iconPath) {
         this.iconPath = iconPath;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
     }
 
     public String getDescription() {

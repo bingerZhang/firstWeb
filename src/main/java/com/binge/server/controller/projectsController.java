@@ -1,9 +1,9 @@
 package com.binge.server.controller;
 
 import com.binge.configuration.ProjectConfiguration;
+import com.binge.module.FamousProject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created with IntelliJ IDEA.
@@ -35,4 +35,20 @@ public class ProjectsController extends DefaultController{
 
         return "/projects/lists";
     }
+    @RequestMapping( "/detail" )
+    public String detail() {
+        ProjectConfiguration configuration = getConfiguration();
+        int id = 0;
+        String idstr = request.getParameter("id");
+        if (idstr != null && idstr.length() > 0) {
+            id = Integer.valueOf(idstr);
+        }
+        FamousProject famousProject = configuration.getFamousProjectById(id);
+        if (famousProject != null)
+        {
+            request.setAttribute("famousproject", famousProject);
+        }
+        return "projects/detail";
+    }
+
 }

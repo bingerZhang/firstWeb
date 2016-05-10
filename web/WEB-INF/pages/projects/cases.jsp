@@ -49,7 +49,7 @@ To change this template use File | Settings | File Templates.
                 <%--<td title="${famousp.name}"><c:out value="${famousp.name}"/></td>--%>
                 <%--<td>--%>
                     <li>
-                    <a style='background: url("${famousp.imagePath}") no-repeat 50%;' href="1-1.htm">
+                    <a style='background: url("${famousp.imagePath[0]}") no-repeat 50%;' href="detail.htm?id=${famousp.id}">
                         <span>"${famousp.name}"</span>
                         <div class="case_mask"></div>
                         <div class="case_ic_zoom"></div>

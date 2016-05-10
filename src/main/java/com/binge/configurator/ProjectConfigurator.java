@@ -6,10 +6,7 @@ import com.binge.module.Project;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by zlb on 2016/4/18.
@@ -61,12 +58,29 @@ public class ProjectConfigurator extends JsonConfigurator<ProjectConfiguration> 
             famousProject.setId(getInt(map, "id", 0));
             famousProject.setName(getString(map, "name"));
             famousProject.setIconPath(getString(map, "iconpath"));
-            famousProject.setImagePath(getString(map, "imagepath"));
+            famousProject.setImagePath(new imagePathObjectMapper().deserialize(map));
             famousProject.setDescription(getString(map,"description"));
 
             return famousProject;
         }
     }
+
+    protected class imagePathObjectMapper extends ObjectMapper<List<String>> {
+
+        @Override
+        public Map<String, Object> serialize(List<String> value) {
+            Map<String, Object> properteis = new HashMap<String, Object>();
+            properteis.put("imagepath", value);
+            return properteis;
+        }
+
+        @Override
+        public List<String> deserialize(Map<String, Object> map) {
+            List<String> list = (List<String>) map.get("imagepath");
+            return list;
+        }
+    }
+
     protected class ProjectObjectMapper extends ObjectMapper<Project> {
 
         @Override

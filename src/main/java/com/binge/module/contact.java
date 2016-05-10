@@ -74,5 +74,4 @@ public class Contact implements Serializable,BeanWrapper {
     public void setFax(String fax) {
         this.fax = fax;
     }
-
 }

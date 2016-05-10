@@ -101,12 +101,12 @@ public class DefaultConfigurationManager implements ConfigurationManager, Runnab
 
     public static void main(String[] args) throws Exception {
 //        testUserConfiguration();
-//        testProjectConfiguration();
+        testProjectConfiguration();
 //        testHotImageConfiguration();
 //        testBrandConfiguration();
 //        testProductConfiguration();
 //        testNewsConfiguration();
-        testContactConfiguration();
+//        testContactConfiguration();
     }
 
     public static void testContactConfiguration() throws DataBackendException {
@@ -225,22 +225,35 @@ public class DefaultConfigurationManager implements ConfigurationManager, Runnab
 //        System.out.println(configuration);
     }
 
-    public static FamousProject getNewFamousProject(int id, String name,String desc,String imagepath,String iconpath){
+    public static FamousProject getNewFamousProject(int id, String name,String desc,List<String>imagepath,String iconpath){
         FamousProject famousProject = new FamousProject();
         famousProject.setId(id);
         famousProject.setName(name);
         famousProject.setDescription(desc);
+
         famousProject.setImagePath(imagepath);
         famousProject.setIconPath(iconpath);
         return famousProject;
 
     }
     public static void testProjectConfiguration() throws DataBackendException {
-        FamousProject famousProject = getNewFamousProject(2,"test_2","test_2_desc","/images/1.jpg","");
-        FamousProject famousProject3 = getNewFamousProject(3,"test_3","test_3_desc","/images/2.jpg","");
-        FamousProject famousProject4 = getNewFamousProject(4,"test_4","test_4_desc","/images/1.jpg","");
-        FamousProject famousProject5 = getNewFamousProject(5,"test_5","test_5_desc","/images/1.jpg","");
-        FamousProject famousProject6 = getNewFamousProject(6,"test_6","test_6_desc","/images/1.jpg","");
+        List<String> imageList = new ArrayList<String>();
+        imageList.add("/images/a1.jpg");
+        imageList.add("/images/a2.jpg");
+        imageList.add("/images/a2.jpg");
+        imageList.add("/images/a2.jpg");
+        imageList.add("/images/a2.jpg");
+        imageList.add("/images/a1.jpg");
+        imageList.add("/images/a1.jpg");
+
+        String desc = "<br>使用品种：G664、英国棕、黑金花、古典米黄\n" +
+                "<br>安装部位：室内、室外、墙面、地面  <br>项目支持：石材供货、技术指导";
+
+        FamousProject famousProject = getNewFamousProject(2,"test_2",desc,imageList,"");
+        FamousProject famousProject3 = getNewFamousProject(3,"test_3",desc,imageList,"");
+        FamousProject famousProject4 = getNewFamousProject(4,"test_4",desc,imageList,"");
+        FamousProject famousProject5 = getNewFamousProject(5,"test_5",desc,imageList,"");
+        FamousProject famousProject6 = getNewFamousProject(6,"test_6",desc,imageList,"");
 //        famousProject.setDescription("test_desc");
 //        famousProject.setImagePath("/images/1.jpg");
 //        famousProject.setIconPath("");
