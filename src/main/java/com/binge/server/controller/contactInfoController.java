@@ -1,8 +1,8 @@
 package com.binge.server.controller;
 
+import com.binge.configuration.ContactConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,11 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping( "/contactinfo" )
-public class ContactInfoController {
-    @RequestMapping( "/1" )
+public class ContactInfoController extends DefaultController{
+    @RequestMapping( "/contact" )
     public String contactInfo() {
+        ContactConfiguration contactConfiguration = getConfiguration(ContactConfiguration.class);
 
-        return "/contactinfo/1";
+        request.setAttribute("contact",contactConfiguration.getContact());
+        return "contactinfo/contact";
     }
 
 }

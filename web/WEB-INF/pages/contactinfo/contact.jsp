@@ -1,4 +1,5 @@
-﻿<%--
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
 Created by IntelliJ IDEA.
 User: zlb
 Date: 16-3-7
@@ -28,7 +29,7 @@ To change this template use File | Settings | File Templates.
 <div class="ad" style="background-image:url('/images/2.jpg')">
 	<div class="ban_top"></div>
 	<div class="area_sec_dhs">
-		<a class="loc" href="1.htm">联系信息</a>
+		<a class="loc" href="contact.htm">联系信息</a>
 	</div>
 </div>
 <div class="area_1200">
@@ -36,11 +37,14 @@ To change this template use File | Settings | File Templates.
 		<div class="read_loc"><img width="12" height="11" src="/images/ic_home.png">&nbsp;&nbsp;<a href="../index.htm">首页</a>  /  联系信息</div>
 	</div>
 	<div class="area_nr">
-		<h3>北京德富众邦石材有限公司</h3>
-		<p>地址：北京市房山区***大厦</p>
-		<p>联系电话：010-86000000 / 86000000 / 86000000</p>
-		<p>联系人：张某某</p>
-		<p>传真：010-86000000 </p>
+        <c:forEach var="cont" items="${contact}" varStatus="status">
+            <h3>${cont.companyname}</h3>
+            <p>${cont.address}</p>
+            <p>${cont.phone}</p>
+            <p>${cont.name}</p>
+            <p>${cont.fax}</p>
+            <p></p>
+        </c:forEach>
 	</div>
 	<div class="sp_60"></div>
 </div>

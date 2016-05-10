@@ -72,7 +72,7 @@
                     </ul>
                 </li>
                 <li class="nli">
-                    <h3><a href="/contactinfo/1.htm" target="_top">联系信息</a></h3>
+                    <h3><a href="/contactinfo/contact.htm" target="_top">联系信息</a></h3>
                 </li>
             </ul>
         </div>
